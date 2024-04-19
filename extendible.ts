@@ -11,9 +11,11 @@ const range = (start: number, stop: number, step = 1): number[] => {
 
 const konst = (x) => () => x;
 
-type Monoid<T> = {
+const numberOfSetBits = (n) => n.toString(2).replace(/0/g, "").length;
+
+interface Monoid<T> {
 	concat: (x: T) => T;
-};
+}
 
 // Maybe type
 type MaybeTag = "Just" | "Nothing";
@@ -67,7 +69,7 @@ class Maybe<T> {
 		}
 	}
 	concat<M extends Monoid<M>>(m2: Maybe<M>) {
-		return Maybe.concat(this as unknown as Maybe<M>, m2);
+		return Maybe.concat(this, m2);
 	}
 }
 
@@ -116,8 +118,6 @@ const substitute =
 		};
 		return list.map(f);
 	};
-
-const numberOfSetBits = (n) => n.toString(2).replace(/0/g, "").length;
 
 const divisibleByRule = rule((i, n) => i % n === 0);
 const setBitsLargerThan = rule((i, n) => numberOfSetBits(i) > n);
