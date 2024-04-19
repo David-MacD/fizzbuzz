@@ -3,6 +3,7 @@
 ### Process
 - [x] Write a simple code example of FizzBuzz
 - [x] Write a working, more complex code example of FizzBuzz
+- [ ] Highlight assumed knowledge in article preamble
 - [ ] Write a simplistic tutorial for exposure to Typescript concepts, using the simple example
 - [ ] Go into more intermediate examples with a tutorial on the extendible complex code
 - [ ] Look at the TypeScript handbook to see if we can make more contrived examples for further exposure/demo
