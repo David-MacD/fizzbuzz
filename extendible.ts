@@ -1,15 +1,4 @@
-// some useful utils
-const range = (start: number, stop: number, step = 1): number[] => {
-	const a = [start];
-	let b = start;
-	while (b < stop) {
-		b += step;
-		a.push(b);
-	}
-	return a;
-};
-
-const konst = (x) => () => x;
+import { range, konst } from "./util.ts";
 
 const numberOfSetBits = (n) => n.toString(2).replace(/0/g, "").length;
 
